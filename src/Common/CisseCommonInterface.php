@@ -5,19 +5,16 @@
  * (c) Boubacar Sow <boubacar.sowboy@gmail.com>
  */
 
-namespace Cisse\BasicEntity;
+namespace Cisse\Common;
 
 /**
- * 
+ *
  * @author sowboy
- * 
  */
-interface BasicEntityInterface 
+interface CisseCommonInterface 
 {
     public function getName(): string;
-    public function getShortName(): string;
     public function getValue(): string;
-    public function setShortName(string $shortName): void;
     public function setName(string $name): void;
     public function setValue(string $value): void;
 }
