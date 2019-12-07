@@ -17,5 +17,6 @@ use Cisse\BasicEntity\BasicEntityInterface;
  */
 interface EntityAttributeInterface extends CisseCommonInterface
 {
-    
+    public function getType(): BasicEntityInterface;
+    public function setType(BasicEntityInterface $basicEntity): void;
 }
