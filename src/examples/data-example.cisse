@@ -1,0 +1,50 @@
+---Entity/Structure Complexe permet de définir une entité simple  Personne ayant trois voitures comme suit :
+[Personne:nom(String:Souheila), prenom(String:Aoudek), age(Integer:31),
+[Voiture:Marque(String:Mercedes), Modele(String:AMG-63), puissance(Integer:457)],
+[Voiture:Marque(String:BMW), Modele(String:M3), puissance(Integer:420)]
+[Voiture:Marque(String:Lexus), Modele(String:LFA), puissance(Integer:580)]
+]
+---Cette représentation peut être simplifiée en omettant les noms de l’entité ESS Voiture de la deuxième et troisième voiture
+[Personne:nom(String:Souheila), prenom(String:Aoudek), age(Integer:31),
+[Voiture:Marque(String:Mercedes), Modele(String:AMG-63), puissance(Integer:457)],
+[Marque(String:BMW), Modele(String:M3), puissance(Integer:420)],
+[Marque(String:Lexus), Modele(String:LFA), puissance(Integer:580)],
+[Addresse:ville(String:Pontoise), rue(String:25\, rue de Gisors)]
+]
+---Cette dernière écriture peut être simplifiée en omettant les types et les noms des attributs des autres instances de Voiture.
+---Cela nous donne l’expression suivante.
+[Personne:nom(String:Souheila), prenom(String:Aoudek), age(Integer:31),
+[Voiture:Marque(String:Mercedes), Modele(String:AMG-63), puissance(Integer:457)],
+[BMW, M3, 420],
+[Lexus, LFA, 580],
+[Addresse:ville(String:Pontoise), rue(String:25\, rue de Gisors)]
+]
+---un tableau anonyme de 4 éléments
+{STR:number, INT:3, RL:3.14957, STR:math}
+
+---un tableau nominatif 'competition' comme suit :
+{competition:#@moscow500, #@texasmiles}
+---un tableau nommé de 5 Voitures dont 3 pour la référence moscow500 et 2 pour la référence texasmiles
+---Les deux références sont décrites ci-dessous:
+#@moscow500[
+Voiture:Marque(String:Mercedes), Modele(String:AMG-65), puissance(Integer:530)],
+[Voiture:Marque(String:BMW), Modele(String:M5), puissance(Integer:570)], [Voiture:Marque(String:AUDI), Modele(String:RS7), puissance(Integer:800)]]
+#@texasmiles[
+Voiture:Marque(String:Mercedes), Modele(String:CLK-GTR), puissance(Integer:750)],
+[Voiture:Marque(String:BMW), Modele(String:M6), puissance(Integer:900)]]
+---un tableau nominatif drivers de 3 ESS Personne comme suit :
+{drivers:[Personne:nom(String:Mohamed), prenom(String:Aoudek), age(Integer:29)],
+         [Personne:nom(String:Ahmed), prenom(String:Nantoumé), age(Integer:27)],
+         [Personne:nom(String:Ibrahim), prenom(String:NDiaye), age(Integer:21)]}
+---Cette définition permet de définir le tableau des digits comme suit :
+Integer{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+---ou
+INT{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+---Autre exemple de tableau des noms des planètes du système solaire comme suit :
+
+String{MERCURY, VENUS, EARTH, MARS, JUPITER, SATURN, URANUS, NEPTUNE}
+STR{MERCURY, VENUS, EARTH, MARS, JUPITER, SATURN, URANUS, NEPTUNE}
+---Cette définition permet de définir un tableau nom type comme suit :
+
+{1, 3, 5.7, Nombres Premiers, 9, 13, inférieur à \, 10*Pi, 31.4159, true}
+{3.14, PI, 23, 1, a, zb, true, 25@01@2010}
