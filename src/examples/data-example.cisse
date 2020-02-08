@@ -5,7 +5,8 @@
 [Voiture:Marque(String:Lexus), Modele(String:LFA), puissance(Integer:580)]
 ]
 ---Cette représentation peut être simplifiée en omettant les noms de l’entité ESS Voiture de la deuxième et troisième voiture
-[Personne:nom(String:Souheila), prenom(String:Aoudek), age(Integer:31),
+[Personne:nom(String:Souheila), 
+prenom(String:Aoudek), age(Integer:31),
 [Voiture:Marque(String:Mercedes), Modele(String:AMG-63), puissance(Integer:457)],
 [Marque(String:BMW), Modele(String:M3), puissance(Integer:420)],
 [Marque(String:Lexus), Modele(String:LFA), puissance(Integer:580)],
@@ -47,4 +48,6 @@ STR{MERCURY, VENUS, EARTH, MARS, JUPITER, SATURN, URANUS, NEPTUNE}
 ---Cette définition permet de définir un tableau nom type comme suit :
 
 {1, 3, 5.7, Nombres Premiers, 9, 13, inférieur à \, 10*Pi, 31.4159, true}
-{3.14, PI, 23, 1, a, zb, true, 25@01@2010}
+{3.14, PI, 23, 1, a, zb, true,
+la vie est belle, game over, la pluie,
+25@01@2010}

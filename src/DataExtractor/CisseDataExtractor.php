@@ -7,6 +7,8 @@
 
 namespace Cisse\DataExtractor;
 
+use Cisse\DataChecker\CisseDataChecker;
+use Cisse\Common\EntityDescriptor;
 
 /**
  * Provide CISSE data without comments.
@@ -17,24 +19,49 @@ class CisseDataExtractor
 {
     private $filename;
 
+    private $cleanedData;
+
+    private $rawData;
+
+    private $dataChecker;
+
+    /**
+     * @param mixed $filename
+     * 
+     * @return void
+     */
     public function __construct($filename)
     {
         $this->filename = $filename;
+        $this->rawData = file_get_contents($this->filename);
+        $this->cleanedData = $this->returnDataWihoutComments();
+        $this->dataChecker = new CisseDataChecker();
     }
 
+    /**
+     * @return array
+     */
     public function returnDataWihoutComments()
     {
-        $rawData = file_get_contents($this->filename);
-        if(!empty($rawData)){
-            $dataInarray = explode("\n", $rawData);
+        if(!empty($this->rawData)){
+            $dataInarray = explode("\n", $this->rawData);
             foreach($dataInarray as $key => $line){
                 preg_match('/^---(.*)$/m', $line, $comments);
-                if($comments){
+                if($comments || empty($line)){
                     unset($dataInarray[$key]);
                 }
             }
-            $cleanedData = implode('', $dataInarray);
-            return $cleanedData;
+            return $dataInarray;
+        }
+    }
+
+    public function getEntitiesThatHaveChildren()
+    {
+        $this->dataChecker->notCisseDataExceptionThrower($this->cleanedData);
+        if(null !== $this->cleanedData){
+            foreach($this->cleanedData as $key => $element){
+                
+            }
         }
     }
 
