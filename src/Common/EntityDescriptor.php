@@ -23,4 +23,5 @@ class EntityDescriptor {
     const CISEE_ARRAY_BEGIN = '{';
     const CISSE_ARRAY_END = '}';
     const CISSE_HASHTAG = '#';
+    const CISSE_COMMENT = '---';
 }
